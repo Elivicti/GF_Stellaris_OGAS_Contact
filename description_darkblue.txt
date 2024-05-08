@@ -1,0 +1,10 @@
+[h1]支持3.11版本[/h1]
+
+[h1]MOD简介：[/h1]
+本MOD为“少女前线（Girls Frontline）群星故事集(正史线：危机联合)”添加OGAS快捷通讯
+此版本为伞的暗蓝科技UI兼容版
+
+[h1]使用方法：[/h1]
+将本MOD置于伞の暗蓝科技UI和危机联合之后
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2785435872]UI Overhaul Dynamic兼容版[/url]
