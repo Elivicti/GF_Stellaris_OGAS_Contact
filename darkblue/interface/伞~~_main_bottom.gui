@@ -100,6 +100,15 @@ guiTypes = {
 				clicksound = interface
 				effect = "AAR_btn_cntr_JUMPER_relic_EXPRESS"
 			}
+			effectButtonType  = {
+				name ="AAR_btn_cntr_JUMPER_relic_EXPRESS_overclock"
+				spriteType = "GFX_AAR_btn_cntr_JUMPER_relic_EXPRESS_overclock"
+				scale = 1
+				Orientation = "UPPER_LEFT"
+				position = { x = 3 y = @Eline_2sp }
+				clicksound = interface
+				effect = "AAR_btn_cntr_JUMPER_relic_EXPRESS_overclock"
+			}
 			##	带刺精灵
 			effectButtonType = {
 				name = "MUI_btn_cntr_MOD_sting_EXPRESS"
