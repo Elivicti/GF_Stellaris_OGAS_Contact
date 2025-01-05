@@ -4,11 +4,9 @@
 @MUI_scale_2 = 0.76	#0.95
 
 #_|MUI快速联系/MUI新增|
+#_|星系视图/银河视图/地图模式/右下角栏|		MUI暂停/PF贸易优化
+#_|更多巨构|	清除
 #_|PSE_UOD|		清除
-#_|星系视图|	MUI暂停
-#_|星系视图|	MUI暂停
-#_|地图模式|	PF贸易优化
-#_|Giga_ehof|	清除
 
 
 
@@ -34,7 +32,6 @@ guiTypes = {
 		}
 
 
-
 		# GF QUICK OGAS CONTACT
 		containerWindowType = {
 			name = "GF_contact_ogas"
@@ -54,7 +51,8 @@ guiTypes = {
 			}
 		}
 
-		###_|MUI快速联系|	###################################################################
+
+		###_|MUI快速联系|	###############################################################################################
 		@Eline_1 = 0
 		@Eline_2sp = 41
 		@Eline_2 = 38
@@ -64,14 +62,14 @@ guiTypes = {
 			orientation = upper_left
 			position = { x = 45 y = 162 }
 			size = { width = 100% height = 100% }
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 2560
 				scale = 1
 				position = { x = 60 y = 162 }	#_|70/120|
 			}
 			
 			##	MUI通用
-			effectButtonType  = {#_收起
+			effectButtonType = {#_收起
 				name ="MUI_btn_EXPRESS_folded"
 				spriteType = "GFX_MUI_btn_EXPRESS_expand"
 				scale = @MUI_scale_1
@@ -81,7 +79,7 @@ guiTypes = {
 				effect = "MUI_btn_EXPRESS_folded"
 			}
 			##	维度魔方EXPRESS
-			effectButtonType  = {
+			effectButtonType = {
 				name ="AAR_btn_cntr_WEBWAY_relic_EXPRESS"
 				spriteType = "GFX_AAR_btn_cntr_WEBWAY_relic_EXPRESS"
 				scale = 1
@@ -91,7 +89,7 @@ guiTypes = {
 				effect = "AAR_btn_cntr_WEBWAY_relic_EXPRESS"
 			}
 			##	宇宙立方EXPRESS
-			effectButtonType  = {
+			effectButtonType = {
 				name ="AAR_btn_cntr_JUMPER_relic_EXPRESS"
 				spriteType = "GFX_AAR_btn_cntr_JUMPER_relic_EXPRESS"
 				scale = 1
@@ -100,7 +98,7 @@ guiTypes = {
 				clicksound = interface
 				effect = "AAR_btn_cntr_JUMPER_relic_EXPRESS"
 			}
-			effectButtonType  = {
+			effectButtonType = {
 				name ="AAR_btn_cntr_JUMPER_relic_EXPRESS_overclock"
 				spriteType = "GFX_AAR_btn_cntr_JUMPER_relic_EXPRESS_overclock"
 				scale = 1
@@ -124,12 +122,7 @@ guiTypes = {
 
 
 
-		###_|PSE_UOD|	###################################################################	begin		###_|PSE_UOD|	###################################################################	end
-
-
-
-
-		###_|星系视图|	###################################################################
+		###_|星系视图|	###############################################################################################
 		### LEAVE SYSTEM WINDOW
 		containerWindowType = {
 			name = "leave_system_window"
@@ -223,7 +216,7 @@ guiTypes = {
 				text_color_code = "E"	#_[H]
 			}
 			##_|MUI暂停|	##########################################
-			effectButtonType  = {
+			effectButtonType = {
 				name ="gui_MUI_pause_placeholder"
 				spriteType = "GFX_z_mui_pause_placeholder"
 				position = { x = -163 y = -77 }
@@ -232,7 +225,7 @@ guiTypes = {
 				effect = "z_mui_pause_placeholder"
 			}
 			#	设置面板
-			effectButtonType  = {
+			effectButtonType = {
 				name ="gui_MUI_pause_FW_button"
 				spriteType = "GFX_z_mui_pause_mm_button"
 				position = { x = -163 y = -77 }
@@ -392,7 +385,7 @@ guiTypes = {
 				oversound = mouse_over
 			}
 			##_|MUI暂停|	##########################################
-			effectButtonType  = {
+			effectButtonType = {
 				name ="gui_MUI_pause_placeholder"
 				spriteType = "GFX_z_mui_pause_placeholder"
 				position = { x = -163 y = -77 }
@@ -401,7 +394,7 @@ guiTypes = {
 				effect = "z_mui_pause_placeholder"
 			}
 			#	设置面板
-			effectButtonType  = {
+			effectButtonType = {
 				name ="gui_MUI_pause_FW_button"
 				spriteType = "GFX_z_mui_pause_mm_button"
 				position = { x = -163 y = -77 }
@@ -410,10 +403,6 @@ guiTypes = {
 				effect = "z_mui_pause_mm_button"
 			}
 		}
-		
-		
-		
-		
 		## Claims Management
 		containerWindowType = {
 			name = "claims_management"
@@ -458,7 +447,7 @@ guiTypes = {
 				quadTextureSprite = "GFX_standard_button_142_34_button"
 				position = { x = -83 y = 52 }
 				orientation = center_up
-				text = "CLOSE"
+				buttonText = "CLOSE"
 				buttonFont = "cg_16b"
 				pdx_tooltip = "TOOLTIP_CLOSE_CLAIMS_MANAGEMENT"
 			}
@@ -469,9 +458,10 @@ guiTypes = {
 			size = { width = 406 height = 124 }
 			hide_position = { x = -203 y = 20 }
 			show_position = { x = -203 y = -107 }
-			animation_type = decelerated
-			animation_time = 500
+			animation_type = smoothstep
+			animation_time = 300
 			orientation = center_down
+			origo = center_down
 			background = {
 				name = "background"
 				spriteType = "GFX_invisible"
@@ -488,13 +478,14 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "status"
 				font = "malgun_goth_24"
+				text = "TRADE_ROUTES_MANAGEMENT_MODE"
 				position = { x = -125 y = 3 }
 				orientation = center_up
 				maxWidth = 250
-				maxHeight = 48
-				alwaysTransparent = yes
+				maxHeight = 50
 				format = center
-				text = "TRADE_ROUTES_MANAGEMENT_MODE"
+				vertical_alignment = center
+				alwaysTransparent = yes
 			}
 			iconType = {
 				name = "system_button_panel"
@@ -512,7 +503,7 @@ guiTypes = {
 				pdx_tooltip = "TOOLTIP_CLOSE_TRADE_ROUTES_MANAGEMENT_MODE"
 			}
 		}
-		###	地图模式	###################################################################
+		###_|地图模式|	###################################################################
 		#	主意其他按钮必须同步3440，他们并非|地图模式|的子元素
 		# Map Modes
 		containerWindowType = {
@@ -520,22 +511,22 @@ guiTypes = {
 			size = { width = 90 height = 72 }
 			position = { x = -531 y = -72 }
 			clipping = yes
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 1650
 				position = { x = -600 y = -72 }
 				size = { width = 160 height = 72 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 1920
 				position = { x = -640 y = -72 }
 				size = { width = 200 height = 72 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 2560
 				position = { x = -590 y = -72 }
 				size = { width = 150 height = 72 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 3440
 				position = { x = -690 y = -72 }
 			}
@@ -556,22 +547,22 @@ guiTypes = {
 			size = { width = 80 height = 68 }
 			position = { x = -520 y = -68 }
 			orientation = lower_right
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 1650
 				size = { width = 145 height = 68 }
 				position = { x = -585 y = -68 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 1920
 				size = { width = 250 height = 68 }
 				position = { x = -690 y = -68 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 2560
 				size = { width = 420 height = 68 }
 				position = { x = -860 y = -68 }
 			}
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = 3440
 				position = { x = -960 y = -68 }
 			}
@@ -590,17 +581,17 @@ guiTypes = {
 				max_slots_horizontal = 2
 				format = "UPPER_RIGHT"
 				orientation = "UPPER_RIGHT"
-				if_resolution = {
+				if_scaled_resolution = {
 					min_width = 1650
 					position = { x = -153 y = 0 }
 					max_slots_horizontal = 4
 				}
-				if_resolution = {
+				if_scaled_resolution = {
 					min_width = 1920
 					position = { x = -258 y = 0 }
 					max_slots_horizontal = 7
 				}
-				if_resolution = {
+				if_scaled_resolution = {
 					min_width = 2560
 					position = { x = -420 y = 0 }
 					max_slots_horizontal = 12
@@ -609,12 +600,12 @@ guiTypes = {
 				}
 			}
 		}
-		# Lower right toolbar
+		###_|右下角栏|	###################################################################
 		containerWindowType = {
 			name = "toolbar"
 			position = { x = -370 y = -36 }
 			size = { width = 380 height = 36 }
-			if_resolution = {
+			if_scaled_resolution = {
 				min_width = @RES_3440
 				position = { x = -470 y = -36 }
 				size = { width = 480 height = 36 }
@@ -638,14 +629,14 @@ guiTypes = {
 			}
 			@button_1_button_x = -89
 			@button_1_icon_x = -74
-			@button_2_button_x = -191
-			@button_2_icon_x = -176
-			@button_3_button_x = -257
-			@button_3_icon_x = -242
-			@button_4_button_x = -323
-			@button_4_icon_x = -308
-			@button_5_button_x = -389
-			@button_5_icon_x = -374
+			@button_2_button_x = -155
+			@button_2_icon_x = -140
+			@button_3_button_x = -221
+			@button_3_icon_x = -206
+			@button_4_button_x = -287
+			@button_4_icon_x = -272
+			@button_5_button_x = -353
+			@button_5_icon_x = -338
 			@button_background = -377
 			buttonType = {
 				name = "button_topbar_menu"
@@ -669,7 +660,7 @@ guiTypes = {
 				name = "button_topbar_chat"
 				quadTextureSprite = "GFX_button_60_29"
 				position = { x = @button_2_button_x y = -45 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -188 y = -45 }
 				}
@@ -680,7 +671,7 @@ guiTypes = {
 				name = "chat_icon"
 				spriteType = "GFX_chat_icon"
 				position = { x = @button_2_icon_x y = -35 }
-				if_resolution = {
+				if_scaled_resolution = {
 					min_width = @RES_3440
 					position = { x = -173 y = -35 }
 				}
@@ -691,7 +682,7 @@ guiTypes = {
 				name = "button_topbar_help"
 				quadTextureSprite = "GFX_button_60_29"
 				position = { x = @button_3_button_x y = -45 }	#x/-9
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -287 y = -45 }
 				}
@@ -708,7 +699,7 @@ guiTypes = {
 				name = "help_icon"
 				spriteType = "GFX_help_icon"
 				position = { x = @button_3_icon_x y = -35 }		#x/1
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -272 y = -35 }
 				}
@@ -719,7 +710,7 @@ guiTypes = {
 				name = "toggle_gotobox"
 				quadTextureSprite = "GFX_button_60_29"
 				position = { x = @button_4_button_x y = -45 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -386 y = -45 }
 				}
@@ -734,7 +725,7 @@ guiTypes = {
 				name = "toggle_gotobox_icon"
 				spriteType = "GFX_search_icon"
 				position = { x = @button_4_icon_x y = -35 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -371 y = -35 }
 				}
@@ -745,7 +736,7 @@ guiTypes = {
 				name = "home_button"
 				quadTextureSprite = "GFX_button_60_29"
 				position = { x = @button_5_button_x y = -45 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -485 y = -45 }
 				}
@@ -760,7 +751,7 @@ guiTypes = {
 				name = "home_icon"
 				spriteType = "GFX_home_icon"
 				position = { x = @button_5_icon_x y = -35 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -470 y = -35 }
 				}
@@ -772,7 +763,7 @@ guiTypes = {
 				name = "toggle_mapmode_details"
 				quadTextureSprite = "GFX_button_29_animated_survey"
 				position = { x = -358 y = -81 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -458 y = -81 }
 				}
@@ -786,7 +777,7 @@ guiTypes = {
 				spriteType = "GFX_mapmode"
 				frame = 9
 				position = { x = -346 y = -68 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -446 y = -68 }
 				}
@@ -798,7 +789,7 @@ guiTypes = {
 				name = "toggle_mapmode_icon_sectors"
 				spriteType = "GFX_map_mode_sectors"
 				position = { x = -414 y = -34 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -514 y = -34 }
 				}
@@ -809,7 +800,7 @@ guiTypes = {
 				name = "toggle_mapmode_sectors"
 				quadTextureSprite = "GFX_button_29_animated"
 				position = { x = -426 y = -46 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -526 y = -46 }
 				}
@@ -822,7 +813,7 @@ guiTypes = {
 				name = "toggle_mapmode_icon_hyperlanes"
 				spriteType = "GFX_map_mode_hyperlanes"
 				position = { x = -448 y = -34 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -548 y = -34 }
 				}
@@ -833,7 +824,7 @@ guiTypes = {
 				name = "toggle_mapmode_hyperlanes"
 				quadTextureSprite = "GFX_button_29_animated"
 				position = { x = -460 y = -46 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -560 y = -46 }
 				}
@@ -843,37 +834,37 @@ guiTypes = {
 				orientation = lower_right
 			}
 			##	PF贸易优化	########################################
-			effectButtonType  = {
+			effectButtonType = {
 				name ="PF_btn_cntr_TRADE_route_ON"
 				spriteType = "GFX_PF_btn_cntr_TRADE_route_ON"
-				position = { x = -390 y = -80 }
-				if_resolution = {#RedRover协助
+				position = { x = -390 y = -46 }
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
-					position = { x = -492 y = -80 }
+					position = { x = -492 y = -46 }
 				}
 				orientation = lower_right
 				clicksound = interface
 				effect = "PF_btn_cntr_TRADE_route_ON"
 			}
-			effectButtonType  = {
+			effectButtonType = {
 				name ="PF_btn_cntr_TRADE_route_OPT"
 				spriteType = "GFX_PF_btn_cntr_TRADE_route_OPT"
-				position = { x = -390 y = -80 }
-				if_resolution = {#RedRover协助
+				position = { x = -390 y = -46 }
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
-					position = { x = -492 y = -80 }
+					position = { x = -492 y = -46 }
 				}
 				orientation = lower_right
 				clicksound = interface
 				effect = "PF_btn_cntr_TRADE_route_OPT"
 			}
-			effectButtonType  = {
+			effectButtonType = {
 				name ="PF_btn_cntr_TRADE_route_BAN"
 				spriteType = "GFX_PF_btn_cntr_TRADE_route_BAN"
-				position = { x = -390 y = -80 }
-				if_resolution = {#RedRover协助
+				position = { x = -390 y = -46 }
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
-					position = { x = -492 y = -80 }
+					position = { x = -492 y = -46 }
 				}
 				orientation = lower_right
 				clicksound = interface
@@ -884,7 +875,7 @@ guiTypes = {
 				name = "toggle_mapmode_icon_trade_routes"
 				spriteType = "GFX_map_mode_trade_routes"
 				position = { x = -414 y = -69 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -514 y = -69 }
 				}
@@ -895,7 +886,7 @@ guiTypes = {
 				name = "toggle_mapmode_trade_routes"
 				quadTextureSprite = "GFX_button_29_animated"
 				position = { x = -426 y = -80 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -526 y = -80 }
 				}
@@ -908,7 +899,7 @@ guiTypes = {
 				name = "toggle_mapmode_icon_unions"
 				spriteType = "GFX_map_mode_unions"
 				position = { x = -448 y = -68 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -548 y = -69 }
 				}
@@ -919,7 +910,7 @@ guiTypes = {
 				name = "toggle_mapmode_unions"
 				quadTextureSprite = "GFX_button_29_animated"
 				position = { x = -460 y = -80 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -560 y = -80 }
 				}
@@ -932,7 +923,7 @@ guiTypes = {
 				name = "toggle_mapmode_icon_players"
 				spriteType = "GFX_map_mode_players"
 				position = { x = -378 y = -68 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -478 y = -69 }
 				}
@@ -943,7 +934,7 @@ guiTypes = {
 				name = "toggle_mapmode_players"
 				quadTextureSprite = "GFX_button_29_animated"
 				position = { x = -390 y = -80 }
-				if_resolution = {#RedRover协助
+				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
 					position = { x = -490 y = -80 }
 				}
@@ -963,13 +954,12 @@ guiTypes = {
 				oversound = no_sound
 			}
 		}
-		
-		
-		
-		
-		###_|Giga_ehof|	################################################################	begin
-		###_|Giga_ehof|	################################################################	end
-		
+
+
+
+
+		###_|更多巨构|	###############################################################################################
+		###_|PSE_UOD|	###############################################################################################
 	}
 
 	containerWindowType = {
@@ -1021,7 +1011,6 @@ guiTypes = {
 	#map mode neighbours
 	containerWindowType = {
 		name = "main_gui_map_mode_entry"
-		position = { x = 0 y = 0 }
 		size = { width = 32 height = 32 }
 		buttonType = {
 			name = "button"
