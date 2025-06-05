@@ -4,7 +4,7 @@
 @MUI_scale_2 = 0.76	#0.95
 
 #_|MUI快速联系/MUI新增|
-#_|星系视图/银河视图/地图模式/右下角栏|		MUI暂停/PF贸易优化
+#_|星系视图/银河视图/地图模式/右下角栏|		MUI暂停
 #_|更多巨构|	清除
 #_|PSE_UOD|		清除
 
@@ -280,7 +280,7 @@ guiTypes = {
 			buttonType = {
 				name = "restricted_system_button"
 				quadTextureSprite = "GFX_restricted_system_icon"
-				position = { x = -112 y = 43 }
+				position = { x = -114 y = 43 }
 			}
 		}
 		###_|银河视图|	###################################################################
@@ -452,57 +452,6 @@ guiTypes = {
 				pdx_tooltip = "TOOLTIP_CLOSE_CLAIMS_MANAGEMENT"
 			}
 		}
-		## Trade Routes Management
-		containerWindowType = {
-			name = "trade_routes_management"
-			size = { width = 406 height = 124 }
-			hide_position = { x = -203 y = 20 }
-			show_position = { x = -203 y = -107 }
-			animation_type = smoothstep
-			animation_time = 300
-			orientation = center_down
-			origo = center_down
-			background = {
-				name = "background"
-				spriteType = "GFX_invisible"
-				alwaysTransparent = yes
-			}
-			iconType = {
-				name = "manage_bar_background"
-				spriteType = "GFX_ui_mapmode_manage"
-				position = { x = 0 y = 28 }
-				alwaysTransparent = yes
-				orientation = center_up
-				centerPosition = yes
-			}
-			instantTextBoxType = {
-				name = "status"
-				font = "malgun_goth_24"
-				text = "TRADE_ROUTES_MANAGEMENT_MODE"
-				position = { x = -125 y = 3 }
-				orientation = center_up
-				maxWidth = 250
-				maxHeight = 50
-				format = center
-				vertical_alignment = center
-				alwaysTransparent = yes
-			}
-			iconType = {
-				name = "system_button_panel"
-				spriteType = "GFX_system_button_panel"
-				position = { x = 0 y = 55 }
-				alwaysTransparent = yes
-			}
-			buttonType = {
-				name = "close"
-				quadTextureSprite = "GFX_standard_button_142_34_button"
-				position = { x = -83 y = 52 }
-				orientation = center_up
-				text = "CLOSE"
-				buttonFont = "cg_16b"
-				pdx_tooltip = "TOOLTIP_CLOSE_TRADE_ROUTES_MANAGEMENT_MODE"
-			}
-		}
 		###_|地图模式|	###################################################################
 		#	主意其他按钮必须同步3440，他们并非|地图模式|的子元素
 		# Map Modes
@@ -600,7 +549,7 @@ guiTypes = {
 				}
 			}
 		}
-		###_|右下角栏|	###################################################################
+		###_|右下角栏|	###################################################################	Lower right toolbar
 		containerWindowType = {
 			name = "toolbar"
 			position = { x = -370 y = -36 }
@@ -697,7 +646,7 @@ guiTypes = {
 			}
 			iconType = {
 				name = "help_icon"
-				spriteType = "GFX_help_icon"
+				spriteType = "GFX_databank_icon"
 				position = { x = @button_3_icon_x y = -35 }		#x/1
 				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
@@ -833,68 +782,6 @@ guiTypes = {
 				pdx_tooltip_anchor_orientation = lower_left
 				orientation = lower_right
 			}
-			##	PF贸易优化	########################################
-			effectButtonType = {
-				name ="PF_btn_cntr_TRADE_route_ON"
-				spriteType = "GFX_PF_btn_cntr_TRADE_route_ON"
-				position = { x = -390 y = -46 }
-				if_scaled_resolution = {#RedRover协助
-					min_width = @RES_3440
-					position = { x = -492 y = -46 }
-				}
-				orientation = lower_right
-				clicksound = interface
-				effect = "PF_btn_cntr_TRADE_route_ON"
-			}
-			effectButtonType = {
-				name ="PF_btn_cntr_TRADE_route_OPT"
-				spriteType = "GFX_PF_btn_cntr_TRADE_route_OPT"
-				position = { x = -390 y = -46 }
-				if_scaled_resolution = {#RedRover协助
-					min_width = @RES_3440
-					position = { x = -492 y = -46 }
-				}
-				orientation = lower_right
-				clicksound = interface
-				effect = "PF_btn_cntr_TRADE_route_OPT"
-			}
-			effectButtonType = {
-				name ="PF_btn_cntr_TRADE_route_BAN"
-				spriteType = "GFX_PF_btn_cntr_TRADE_route_BAN"
-				position = { x = -390 y = -46 }
-				if_scaled_resolution = {#RedRover协助
-					min_width = @RES_3440
-					position = { x = -492 y = -46 }
-				}
-				orientation = lower_right
-				clicksound = interface
-				effect = "PF_btn_cntr_TRADE_route_BAN"
-			}
-			########################################
-			iconType = {
-				name = "toggle_mapmode_icon_trade_routes"
-				spriteType = "GFX_map_mode_trade_routes"
-				position = { x = -414 y = -69 }
-				if_scaled_resolution = {#RedRover协助
-					min_width = @RES_3440
-					position = { x = -514 y = -69 }
-				}
-				orientation = "LOWER_RIGHT"
-				alwaysTransparent = yes
-			}
-			buttonType = {
-				name = "toggle_mapmode_trade_routes"
-				quadTextureSprite = "GFX_button_29_animated"
-				position = { x = -426 y = -80 }
-				if_scaled_resolution = {#RedRover协助
-					min_width = @RES_3440
-					position = { x = -526 y = -80 }
-				}
-				pdx_tooltip = "TOGGLE_MAPMODE_TRADE_ROUTES_INFO"
-				pdx_tooltip_anchor_offset = { x = 0 y = @tt_offset_y }
-				pdx_tooltip_anchor_orientation = lower_left
-				orientation = lower_right
-			}
 			iconType = {
 				name = "toggle_mapmode_icon_unions"
 				spriteType = "GFX_map_mode_unions"
@@ -922,10 +809,10 @@ guiTypes = {
 			iconType = {
 				name = "toggle_mapmode_icon_players"
 				spriteType = "GFX_map_mode_players"
-				position = { x = -378 y = -68 }
+				position = { x = -414 y = -68 }
 				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
-					position = { x = -478 y = -69 }
+					position = { x = -514 y = -69 }
 				}
 				orientation = "LOWER_RIGHT"
 				alwaysTransparent = yes
@@ -933,10 +820,10 @@ guiTypes = {
 			buttonType = {
 				name = "toggle_mapmode_players"
 				quadTextureSprite = "GFX_button_29_animated"
-				position = { x = -390 y = -80 }
+				position = { x = -426 y = -80 }
 				if_scaled_resolution = {#RedRover协助
 					min_width = @RES_3440
-					position = { x = -490 y = -80 }
+					position = { x = -526 y = -80 }
 				}
 				pdx_tooltip = "TOGGLE_MAPMODE_PLAYERS_INFO"
 				pdx_tooltip_anchor_offset = { x = 0 y = @tt_offset_y }
@@ -1012,16 +899,16 @@ guiTypes = {
 	containerWindowType = {
 		name = "main_gui_map_mode_entry"
 		size = { width = 32 height = 32 }
-		buttonType = {
-			name = "button"
-			quadTextureSprite = "GFX_button_29_animated"
-			position = { x = -12 y = -12 }
-			clicksound = "ui_click_map_mode"
-		}
 		iconType = {
 			name = "icon"
 			spriteType = "GFX_map_mode_neighbours"
 			alwaysTransparent = yes
+		}
+		buttonType = {
+			name = "button"
+			quadTextureSprite = "GFX_button_29_animated"	#不用V实体bg
+			position = { x = -12 y = -12 }
+			clicksound = "ui_click_map_mode"
 		}
 	}
 }
